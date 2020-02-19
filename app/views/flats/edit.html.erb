@@ -1,0 +1,10 @@
+<h1>Edit Flat</h1>
+<%= simple_form_for [@flat] do |f| %>
+  <%= f.input name %>
+  <%= f.input address %>
+  <%= f.input description %>
+  <%= f.input number_of_guests %>
+  <%= f.input price_per_night %>
+  <%= fi.input 'Update Flat' %>
+<% end %>
+<%= link_to "Cancel", flat_path(params[:id]) %>

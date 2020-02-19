@@ -1,0 +1,26 @@
+<%= link_to 'Simple Airbnb', flats_index_path %>
+
+<!-- Search form goes here-->
+
+<%= link_to 'Add Flat', flats_new_path %>
+<h1>All Our Flats</h1>
+<p>All <%= @flats.count %></p>
+
+<ul>
+  <% @flats.each do |flat| %>
+  <br>
+    <ul>
+      <li><%= flat.name %> </li>
+      <li><%= flat.details %></li>
+      <div class="details">
+        <li><%= flat.number_of_guests %></li>
+        <li><%= flat.price_per_night %></li>
+      </div>
+      <div class="buttons">
+        <li><%= link_to 'More info', flat_path(flat) %></li>
+        <li><%= link_to 'Edit', edit_flat_path(flat) %></li>
+        <li><%= link_to 'Remove', flat_path(flat), method: :delete %></li>
+      </div>
+    </ul>
+  <% end %>
+</ul>
